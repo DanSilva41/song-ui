@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 import {environment} from '../../environments/environment';
-import { Especie, Song } from '../core/models';
+import { Song } from '../core/models';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class SongsService {
   private URL;
 
   constructor(private http: HttpClient) {
-    this.URL = `${environment.apiHost}/api/especies`;
+    this.URL = `${environment.apiHost}/api/songs`;
   }
 
   listSongs() {

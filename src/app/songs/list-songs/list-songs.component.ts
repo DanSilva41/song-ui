@@ -25,7 +25,7 @@ export class ListSongsComponent implements OnInit {
     this.title.setTitle('Músicas');
     this.pageTitle = "Lista de Músicas";
     
-    // this.listar();
+    this.listar();
   }
 
   private listar() {
