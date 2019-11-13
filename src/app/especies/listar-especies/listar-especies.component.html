@@ -1,0 +1,77 @@
+<section class="content">
+    <div class="container">
+       <div class="row clearfix">
+          <div class="col-lg-12">
+             <div class="card">
+                <div class="body block-header">
+                   <div class="row">
+                      <div class="col-lg-6 col-md-8 col-sm-12">
+                         <h2>{{ tituloPagina }}</h2>
+                         <ul class="breadcrumb p-l-0 p-b-0 ">
+                            <li class="breadcrumb-item"><a routerLink="" href="index.html"><i class="icon-home"></i></a></li>
+                            <li class="breadcrumb-item active">Espécies</li>
+                         </ul>
+                      </div>
+                      <div class="col-lg-6 col-md-4 col-sm-12 text-right">
+                         <a routerLink="novo">
+                         <button class="btn btn-primary btn-round btn-simple float-right hidden-xs m-l-10" hre>Criar nova</button>
+                         </a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="row clearfix">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+             <div class="card">
+                <div class="header">
+                   <h2><small>Abaixo estarão listadas todas as espécies cadastradas</small> </h2>
+                   <ul class="header-dropdown">
+                      <li class="remove">
+                         <a role="button" class="boxs-close"><i class="zmdi zmdi-close"></i></a>
+                      </li>
+                   </ul>
+                </div>
+                <div class="body">
+                   <div class="table-responsive">
+                      <table class="table table-hover text-center">
+                         <thead>    
+                            <tr>
+                               <th>#</th>
+                               <th>NOME</th>
+                               <th>DESCRIÇÃO</th>
+                               <th>AÇÕES</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                           <tr *ngFor="let especie of especies">
+                              <th scope="row">{{especie.codigo}}</th>
+                              <td><a [routerLink]="[especie.codigo]">{{especie.nome}}</a></td>
+                             <td>{{especie.descricao}}</td>
+                             <td>
+                                 <div class="btn-group flex-btn-group-container">
+                                     <button type="submit"
+                                             [routerLink]="[especie.codigo]"
+                                             replaceUrl="true"
+                                             class="btn btn-primary btn-sm">
+                                         <span class="fa fa-pencil"></span>
+                                         <span class="hidden-md-down">Editar</span>
+                                     </button>
+                                     <button (click)="openConfirmationModal(especie)"
+                                             class="btn btn-danger btn-sm">
+                                         <span class="fa fa-remove"></span>
+                                         <span class="hidden-md-down">Remover</span>
+                                     </button>
+                                 </div>
+                             </td>
+                           </tr>
+                         </tbody>
+                      </table>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>

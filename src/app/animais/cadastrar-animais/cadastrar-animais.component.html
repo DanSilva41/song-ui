@@ -1,0 +1,50 @@
+<section class="content">
+  <div class="container">
+     <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+           <div class="card">
+              <div class="header">
+                 <h2><strong>{{ tituloPagina }}</strong></h2>
+              </div>
+              <form #f="ngForm" (ngSubmit)="salvar()">
+                 <div class="body">
+                    <div class="row clearfix">
+                       <div class="col-lg-6 col-md-6 col-sm-12">
+                          <div class="form-group">
+                             <input type="text" class="form-control" placeholder="Nome" name="nome" [(ngModel)]="animal.nome" maxlength="120" />
+                          </div>
+                          <div class="form-group">
+                              <select class="form-control show-tick" name="sexo" [(ngModel)]="animal.sexo">
+                                <option *ngFor="let s of sexoAnimal" [value]="s.value">{{s.label}}</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                             <input type="date" class="form-control" placeholder="Data de Nascimento" name="dataNascimento" [(ngModel)]="animal.dataNascimento">
+                          </div>
+                       </div>
+                       <div class="col-lg-6 col-md-6 col-sm-12">
+                          <div class="form-group">
+                              <select class="form-control show-tick" name="especie" [(ngModel)]="animal.especie.codigo" required >
+                                <option [value]="0">Selecione...</option>
+                                <option *ngFor="let e of especies" [value]="e.codigo">{{e.nome}}</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                             <input type="text" class="form-control" placeholder="Cor" name="cor" [(ngModel)]="animal.cor">
+                          </div>
+                       </div>
+                    </div>
+                    <div class="row clearfix">
+                       <div class="col-lg-4 col-md-4 col-sm-6">
+                           <button type="button" class="btn btn-default"
+                           (click)="redirecionarLista()" replaceUrl="true">Voltar</button>
+                           <button type="submit" class="btn btn-primary">Salvar</button>
+                       </div>
+                    </div>
+                 </div>
+              </form>
+           </div>
+        </div>
+     </div>
+  </div>
+</section>
