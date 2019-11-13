@@ -13,3 +13,10 @@ export class Animal {
   especie: Especie = new Especie();
   
 }
+//
+
+export class Song {
+  identifier: number;
+  name: string;
+  description: string;
+}
