@@ -5,14 +5,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {CoreModule} from './core/core.module';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LoginModule} from "./login/login.module";
-import { ShareModule } from './shared/shared.module';
-import { SongsComponent } from './songs/songs.component';
+import { SongsModule } from './songs/songs.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SongsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +18,8 @@ import { SongsComponent } from './songs/songs.component';
 
     AppRoutingModule,
     CoreModule,
-    LoginModule
+    LoginModule,
+    SongsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
